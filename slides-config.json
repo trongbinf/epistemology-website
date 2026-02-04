@@ -1,0 +1,143 @@
+{
+    "slides": {
+        "slide_1": {
+            "path": "/slides/slide_1.png",
+            "title": "Nhận thức luận - Giới thiệu",
+            "page": "introduction"
+        },
+        "slide_2": {
+            "path": "/slides/slide_2.png",
+            "title": "Nhận thức luận - Giới thiệu",
+            "page": "introduction"
+        },
+        "slide_3": {
+            "path": "/slides/slide_3.png",
+            "title": "Nhận thức luận - Giới thiệu",
+            "page": "introduction"
+        },
+        "slide_4": {
+            "path": "/slides/slide_4.png",
+            "title": "Nhận thức luận - Giới thiệu",
+            "page": "introduction"
+        },
+        "slide_5": {
+            "path": "/slides/slide_5.png",
+            "title": "Nhận thức luận - Giới thiệu",
+            "page": "introduction"
+        },
+        "slide_13": {
+            "path": "https://cdn2.fptshop.com.vn/unsafe/triet_hoc_la_gi_1_10909d3bbb.jpg",
+            "title": "Nguồn gốc của nhận thức",
+            "page": "origin"
+        },
+        "slide_14": {
+            "path": "https://cdn2.fptshop.com.vn/unsafe/khach_the_la_gi_4_a4336e7d7a.jpg",
+            "title": "Chủ thể và Khách thể",
+            "page": "origin"
+        },
+        "slide_15": {
+            "path": "/slides/slide_15.png",
+            "title": "Bản chất của nhận thức",
+            "page": "origin"
+        },
+        "slide_16": {
+            "path": "/slides/slide_16.png",
+            "title": "Bản chất của nhận thức",
+            "page": "origin"
+        },
+        "slide_17": {
+            "path": "/slides/slide_17.png",
+            "title": "Nhận thức kinh nghiệm vs Lý luận",
+            "page": "levels"
+        },
+        "slide_18": {
+            "path": "/slides/slide_18.png",
+            "title": "Nhận thức thường thức vs Khoa học",
+            "page": "levels"
+        },
+        "slide_19": {
+            "path": "/slides/slide_19.png",
+            "title": "Thực tiễn - Định nghĩa",
+            "page": "practice"
+        },
+        "slide_20": {
+            "path": "/slides/slide_20.png",
+            "title": "Ba hình thức thực tiễn",
+            "page": "practice"
+        },
+        "slide_21": {
+            "path": "/slides/slide_21.png",
+            "title": "Vai trò của thực tiễn",
+            "page": "practice"
+        },
+        "slide_22": {
+            "path": "/slides/slide_22.png",
+            "title": "Thực tiễn và nhận thức",
+            "page": "practice"
+        },
+        "slide_23": {
+            "path": "/slides/slide_23.png",
+            "title": "Nhận thức cảm tính",
+            "page": "cognition"
+        },
+        "slide_24": {
+            "path": "/slides/slide_24.png",
+            "title": "Nhận thức cảm tính",
+            "page": "cognition"
+        },
+        "slide_25": {
+            "path": "/slides/slide_25.png",
+            "title": "Nhận thức lý tính",
+            "page": "cognition"
+        },
+        "slide_26": {
+            "path": "/slides/slide_26.png",
+            "title": "Nhận thức lý tính",
+            "page": "cognition"
+        },
+        "slide_27": {
+            "path": "/slides/slide_27.png",
+            "title": "Nhận thức lý tính",
+            "page": "cognition"
+        },
+        "slide_28": {
+            "path": "/slides/slide_28.png",
+            "title": "Tại sao phải học mãi?",
+            "page": "dialectical-path"
+        },
+        "slide_29": {
+            "path": "/slides/slide_29.png",
+            "title": "Chu trình nhận thức",
+            "page": "dialectical-path"
+        },
+        "slide_30": {
+            "path": "/slides/slide_30.png",
+            "title": "Sự thống nhất các giai đoạn",
+            "page": "dialectical-path"
+        },
+        "slide_31": {
+            "path": "/slides/slide_31.png",
+            "title": "Sự thống nhất các giai đoạn",
+            "page": "dialectical-path"
+        },
+        "slide_32": {
+            "path": "/slides/slide_32.png",
+            "title": "Định nghĩa chân lý",
+            "page": "truth"
+        },
+        "slide_33": {
+            "path": "/slides/slide_33.png",
+            "title": "Ba tính chất của chân lý",
+            "page": "truth"
+        }
+    },
+    "instructions": {
+        "note": "Để thêm ảnh slides vào website:",
+        "steps": [
+            "1. Copy tất cả ảnh slides đã capture vào thư mục: /Users/dotritrong/Desktop/MLN111/epistemology-website/public/slides/",
+            "2. Đổi tên các file ảnh theo format: slide_1.png, slide_2.png, ..., slide_33.png",
+            "3. Các ảnh sẽ tự động hiển thị ở vị trí placeholder trong mỗi page",
+            "4. Nếu muốn thay đổi path, chỉnh sửa file JSON này và update code"
+        ]
+    }
+}
