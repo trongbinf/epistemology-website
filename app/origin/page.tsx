@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import ScrollAnimation from '@/components/ScrollAnimations';
+import TopicNavigator from '@/components/TopicNavigator';
 import styles from './page.module.css';
 import { getSlidesByPage } from '@/lib/slides';
 
@@ -22,39 +24,42 @@ export default function OriginPage() {
           </div>
 
           <div className={styles.content}>
-            <section className="glass-card">
-              <h2>Nguồn gốc của nhận thức</h2>
-              <p>
-                Nhận thức bắt nguồn từ <strong>thực tiễn</strong> - hoạt động vật chất có mục đích của con người 
-                nhằm cải tạo tự nhiên và xã hội. Không có thực tiễn thì không có nhận thức.
-              </p>
-              <p>
-                Trong quá trình thực tiễn, con người tiếp xúc với thế giới khách quan, tác động lên nó và 
-                nhận được phản tác động. Đây chính là cơ sở để hình thành nhận thức.
-              </p>
-              {/* Slide image */}
-              <div className={styles.imageContainer}>
-                {originSlides[0] && (
-                  <>
-                    <img 
-                      src={originSlides[0].path} 
-                      alt={originSlides[0].title}
-                      className={styles.slideImage}
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling?.classList.remove(styles.hidden);
-                      }}
-                    />
-                    <div className={`${styles.imagePlaceholder} ${styles.hidden}`}>
-                      <p>📊 {originSlides[0].title}</p>
-                      <small>Chưa có ảnh - Thêm vào: {originSlides[0].path}</small>
-                    </div>
-                  </>
-                )}
-              </div>
-            </section>
+            <ScrollAnimation variant="slideUp" delay={0.2}>
+              <section className="glass-card hover-scale">
+                <h2>Nguồn gốc của nhận thức</h2>
+                <p>
+                  Nhận thức bắt nguồn từ <strong>thực tiễn</strong> - hoạt động vật chất có mục đích của con người 
+                  nhằm cải tạo tự nhiên và xã hội. Không có thực tiễn thì không có nhận thức.
+                </p>
+                <p>
+                  Trong quá trình thực tiễn, con người tiếp xúc với thế giới khách quan, tác động lên nó và 
+                  nhận được phản tác động. Đây chính là cơ sở để hình thành nhận thức.
+                </p>
+                {/* Slide image */}
+                <div className={styles.imageContainer}>
+                  {originSlides[0] && (
+                    <>
+                      <img 
+                        src={originSlides[0].path} 
+                        alt={originSlides[0].title}
+                        className={styles.slideImage}
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.nextElementSibling?.classList.remove(styles.hidden);
+                        }}
+                      />
+                      <div className={`${styles.imagePlaceholder} ${styles.hidden}`}>
+                        <p>📊 {originSlides[0].title}</p>
+                        <small>Chưa có ảnh - Thêm vào: {originSlides[0].path}</small>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.3}>
+              <section className="glass-card hover-scale">
               <h2>Chủ thể và Khách thể nhận thức</h2>
               <div className={styles.dialecticGrid}>
                 <div className={styles.dialecticCard}>
@@ -107,9 +112,11 @@ export default function OriginPage() {
                   </>
                 )}
               </div>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.4}>
+              <section className="glass-card hover-scale">
               <h2>Bản chất của nhận thức</h2>
               <div className={styles.essenceList}>
                 <div className={styles.essenceItem}>
@@ -171,9 +178,11 @@ export default function OriginPage() {
                   </div>
                 )}
               </div>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.5}>
+              <section className="glass-card hover-scale">
               <h2>Mối quan hệ biện chứng</h2>
               <p>
                 Chủ thể và khách thể nhận thức có mối quan hệ biện chứng với nhau:
@@ -192,17 +201,23 @@ export default function OriginPage() {
                   cải tạo thế giới, biến khả năng thành hiện thực.
                 </p>
               </div>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <div className={styles.quote}>
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.quoteText}>
-                Ý thức con người không chỉ phản ánh thế giới khách quan mà còn sáng tạo ra nó
-              </p>
-              <p className={styles.quoteAuthor}>— V.I. Lenin</p>
-            </div>
+            <ScrollAnimation variant="fadeIn" delay={0.6}>
+              <div className={styles.quote}>
+                <div className={styles.quoteIcon}>"</div>
+                <p className={styles.quoteText}>
+                  Ý thức con người không chỉ phản ánh thế giới khách quan mà còn sáng tạo ra nó
+                </p>
+                <p className={styles.quoteAuthor}>— V.I. Lenin</p>
+              </div>
+            </ScrollAnimation>
           </div>
         </motion.div>
+
+        {/* Topic Navigation */}
+        <TopicNavigator currentPath="/origin" />
       </div>
     </div>
   );

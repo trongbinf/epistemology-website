@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import ScrollAnimation from '@/components/ScrollAnimations';
+import TopicNavigator from '@/components/TopicNavigator';
 import styles from './page.module.css';
 import { getSlidesByPage } from '@/lib/slides';
 
@@ -16,7 +18,8 @@ export default function TruthPage() {
           </div>
 
           <div className={styles.content}>
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.2}>
+              <section className="glass-card hover-scale">
               <h2>Chân lý là gì?</h2>
               <p><strong>Chân lý</strong> là tri thức phản ánh đúng đắn thực tại khách quan, được kiểm nghiệm bằng thực tiễn.</p>
               <p>Chân lý không phải là điều gì đó cố định, bất biến mà là một quá trình vận động, phát triển không ngừng.</p>
@@ -30,9 +33,11 @@ export default function TruthPage() {
                   />
                 </div>
               )}
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.3}>
+              <section className="glass-card hover-scale">
               <h2>Ba tính chất cơ bản của chân lý</h2>
               <div className={styles.propertiesGrid}>
                 <div className={styles.propertyCard}>
@@ -73,9 +78,11 @@ export default function TruthPage() {
                   />
                 </div>
               )}
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.4}>
+              <section className="glass-card hover-scale">
               <h2>Thực tiễn - Tiêu chuẩn của chân lý</h2>
               <div className={styles.criterionBox}>
                 <div className={styles.criterionItem}>
@@ -91,15 +98,21 @@ export default function TruthPage() {
                   <p>Thực tiễn vừa là tiêu chuẩn tuyệt đối (duy nhất, khách quan) vừa có tính tương đối (phát triển, hoàn thiện không ngừng).</p>
                 </div>
               </div>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <div className={styles.quote}>
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.quoteText}>Thực tiễn cao hơn nhận thức lý luận vì nó không chỉ có phẩm chất của tính phổ biến mà còn có phẩm chất của hiện thực trực tiếp</p>
-              <p className={styles.quoteAuthor}>— V.I. Lenin</p>
-            </div>
+            <ScrollAnimation variant="fadeIn" delay={0.5}>
+              <div className={styles.quote}>
+                <div className={styles.quoteIcon}>"</div>
+                <p className={styles.quoteText}>Thực tiễn cao hơn nhận thức lý luận vì nó không chỉ có phẩm chất của tính phổ biến mà còn có phẩm chất của hiện thực trực tiếp</p>
+                <p className={styles.quoteAuthor}>— V.I. Lenin</p>
+              </div>
+            </ScrollAnimation>
           </div>
         </motion.div>
+
+        {/* Topic Navigation */}
+        <TopicNavigator currentPath="/truth" />
       </div>
     </div>
   );

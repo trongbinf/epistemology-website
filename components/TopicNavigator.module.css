@@ -1,0 +1,190 @@
+.navigator {
+    margin: 4rem auto;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+}
+
+.progressSection {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.progressText {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.progressText strong {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.progressBar {
+    height: 8px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 999px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.navButton {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.navButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: -1;
+}
+
+.navButton:hover::before {
+    opacity: 0.1;
+}
+
+.navButton:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 12px 48px rgba(139, 92, 246, 0.3);
+    transform: translateY(-4px);
+}
+
+.navButton.next {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+}
+
+.navButton.next::before {
+    background: var(--gradient-primary);
+}
+
+.navButton.home {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+}
+
+.navButton.home::before {
+    background: var(--gradient-accent);
+}
+
+.buttonContent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.buttonText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.label {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.title {
+    font-size: 1.125rem;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: var(--color-accent-purple);
+    transition: transform var(--transition-normal);
+}
+
+.navButton:hover .arrow {
+    transform: translateX(4px);
+}
+
+.navButton:first-child:hover .arrow {
+    transform: translateX(-4px);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .buttons {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .navButton {
+        padding: 1.25rem;
+    }
+
+    .buttonContent {
+        gap: 0.75rem;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .arrow {
+        font-size: 1.25rem;
+    }
+
+    .placeholder {
+        display: none;
+    }
+}
+
+/* Animation for completion celebration */
+@keyframes celebrate {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.navButton.home:hover {
+    animation: celebrate 0.6s ease-in-out;
+}

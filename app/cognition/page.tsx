@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import ScrollAnimation from '@/components/ScrollAnimations';
+import TopicNavigator from '@/components/TopicNavigator';
 import styles from './page.module.css';
 import { getSlidesByPage } from '@/lib/slides';
 
@@ -22,7 +24,8 @@ export default function CognitionPage() {
           </div>
 
           <div className={styles.content}>
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.2}>
+              <section className="glass-card hover-scale">
               <h2>Nhận thức cảm tính (Sensuous Cognition)</h2>
               <p>
                 Là giai đoạn đầu tiên của quá trình nhận thức, phản ánh trực tiếp các thuộc tính bên ngoài 
@@ -79,9 +82,11 @@ export default function CognitionPage() {
                   )}
                 </div>
               )}
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.3}>
+              <section className="glass-card hover-scale">
               <h2>Nhận thức lý tính (Rational Cognition)</h2>
               <p>
                 Là giai đoạn cao hơn của quá trình nhận thức, phản ánh bản chất, quy luật của sự vật 
@@ -147,9 +152,11 @@ export default function CognitionPage() {
                   )}
                 </div>
               )}
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.4}>
+              <section className="glass-card hover-scale">
               <h2>Mối quan hệ giữa nhận thức cảm tính và lý tính</h2>
               <div className={styles.relationshipBox}>
                 <div className={styles.relationItem}>
@@ -196,17 +203,23 @@ export default function CognitionPage() {
                   </div>
                 </div>
               </div>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <div className={styles.quote}>
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.quoteText}>
-                Từ sống động trực quan đến tư duy trừu tượng - đó là con đường biện chứng của nhận thức chân lý
-              </p>
-              <p className={styles.quoteAuthor}>— V.I. Lenin</p>
-            </div>
+            <ScrollAnimation variant="fadeIn" delay={0.5}>
+              <div className={styles.quote}>
+                <div className={styles.quoteIcon}>"</div>
+                <p className={styles.quoteText}>
+                  Từ sống động trực quan đến tư duy trừu tượng - đó là con đường biện chứng của nhận thức chân lý
+                </p>
+                <p className={styles.quoteAuthor}>— V.I. Lenin</p>
+              </div>
+            </ScrollAnimation>
           </div>
         </motion.div>
+
+        {/* Topic Navigation */}
+        <TopicNavigator currentPath="/cognition" />
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import ScrollAnimation from '@/components/ScrollAnimations';
+import TopicNavigator from '@/components/TopicNavigator';
 import styles from './page.module.css';
 import { getSlidesByPage } from '@/lib/slides';
 
@@ -16,7 +18,8 @@ export default function DialecticalPathPage() {
           </div>
 
           <div className={styles.content}>
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.2}>
+              <section className="glass-card hover-scale">
               <h2>Tại sao phải "Học, học nữa, học mãi"?</h2>
               <p>Nhận thức là một quá trình vận động, phát triển không ngừng. Chân lý không phải là điều gì đó cố định, bất biến mà luôn phát triển, hoàn thiện qua thực tiễn.</p>
               {dialecticalSlides[0] && (
@@ -29,9 +32,11 @@ export default function DialecticalPathPage() {
                   />
                 </div>
               )}
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.3}>
+              <section className="glass-card hover-scale">
               <h2>Chu trình nhận thức</h2>
               <div className={styles.cycleBox}>
                 <div className={styles.cycleStep}>
@@ -72,9 +77,11 @@ export default function DialecticalPathPage() {
                   />
                 </div>
               )}
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.4}>
+              <section className="glass-card hover-scale">
               <h2>Sự thống nhất của các giai đoạn</h2>
               <div className={styles.unityList}>
                 <div className={styles.unityItem}>
@@ -115,15 +122,21 @@ export default function DialecticalPathPage() {
                   )}
                 </div>
               )}
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <div className={styles.quote}>
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.quoteText}>Thực tiễn - Lý luận - Thực tiễn, đó là hình thức biện chứng của nhận thức chân lý khách quan</p>
-              <p className={styles.quoteAuthor}>— Mao Trạch Đông</p>
-            </div>
+            <ScrollAnimation variant="fadeIn" delay={0.5}>
+              <div className={styles.quote}>
+                <div className={styles.quoteIcon}>"</div>
+                <p className={styles.quoteText}>Từ trực quan sinh động đến tư duy trừu tượng, và từ đó đến thực tiễn - đó là con đường biện chứng của nhận thức chân lý, của nhận thức thực tại khách quan</p>
+                <p className={styles.quoteAuthor}>— V.I. Lenin</p>
+              </div>
+            </ScrollAnimation>
           </div>
         </motion.div>
+
+        {/* Topic Navigation */}
+        <TopicNavigator currentPath="/dialectical-path" />
       </div>
     </div>
   );

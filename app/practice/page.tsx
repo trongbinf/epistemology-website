@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import ScrollAnimation from '@/components/ScrollAnimations';
+import TopicNavigator from '@/components/TopicNavigator';
 import styles from './page.module.css';
 
 export default function PracticePage() {
@@ -20,7 +22,8 @@ export default function PracticePage() {
           </div>
 
           <div className={styles.content}>
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.2}>
+              <section className="glass-card hover-scale">
               <h2>Thực tiễn là gì?</h2>
               <p>
                 <strong>Thực tiễn</strong> là toàn bộ hoạt động vật chất có mục đích, có ý thức của con người 
@@ -30,9 +33,11 @@ export default function PracticePage() {
                 Thực tiễn có tính chất khách quan, lịch sử - xã hội và mang tính sáng tạo. 
                 Đây là hoạt động cơ bản nhất của con người, quyết định sự tồn tại và phát triển của xã hội loài người.
               </p>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.3}>
+              <section className="glass-card hover-scale">
               <h2>Ba hình thức cơ bản của thực tiễn</h2>
               <div className={styles.formsGrid}>
                 <div className={styles.formCard}>
@@ -71,9 +76,11 @@ export default function PracticePage() {
                   </div>
                 </div>
               </div>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.4}>
+              <section className="glass-card hover-scale">
               <h2>Vai trò của thực tiễn đối với nhận thức</h2>
               <div className={styles.rolesList}>
                 <div className={styles.roleItem}>
@@ -120,9 +127,11 @@ export default function PracticePage() {
                   </div>
                 </div>
               </div>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <section className="glass-card">
+            <ScrollAnimation variant="slideUp" delay={0.5}>
+              <section className="glass-card hover-scale">
               <h2>Mối quan hệ biện chứng giữa thực tiễn và nhận thức</h2>
               <div className={styles.dialectic}>
                 <div className={styles.dialecticItem}>
@@ -140,18 +149,24 @@ export default function PracticePage() {
                   </p>
                 </div>
               </div>
-            </section>
+              </section>
+            </ScrollAnimation>
 
-            <div className={styles.quote}>
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.quoteText}>
-                Thực tiễn cao hơn nhận thức (lý luận), vì nó không chỉ có phẩm chất của tính phổ biến 
-                mà còn có phẩm chất của hiện thực trực tiếp
-              </p>
-              <p className={styles.quoteAuthor}>— V.I. Lenin</p>
-            </div>
+            <ScrollAnimation variant="fadeIn" delay={0.6}>
+              <div className={styles.quote}>
+                <div className={styles.quoteIcon}>"</div>
+                <p className={styles.quoteText}>
+                  Thực tiễn cao hơn nhận thức (lý luận), vì nó không chỉ có phẩm chất của tính phổ biến 
+                  mà còn có phẩm chất của hiện thực trực tiếp
+                </p>
+                <p className={styles.quoteAuthor}>— V.I. Lenin</p>
+              </div>
+            </ScrollAnimation>
           </div>
         </motion.div>
+
+        {/* Topic Navigation */}
+        <TopicNavigator currentPath="/practice" />
       </div>
     </div>
   );
